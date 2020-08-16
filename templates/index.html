@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <ul class="list">
+        {% if session['logged_in'] == True %}
+          <li><a href="/logout">Logout</a></li>
+        {% else %}
+          <li><a href="/register">Sign Up</a></li>
+          <li><a href="/login">Sign in</a></li>
+        {% endif %}
+    </ul>
+    <p id="not_available">This listing is no longer available.</p>
+    <hr id="middle_line">
+    <div class="grid-container">
+        <div class="column1">
+            <p class="regular">Find a place to stay.</p>
+            <a href="search.html">Rent nightly from real people 830 <i>cities</i> in 73 <i>countries</i>.</a>
+            <form>
+            <input type="text" id="location" name="location" placeholder="Where are you going?"></form>
+            <p>Check in</p>
+            <form>
+                <input type="date" name="check_in_date">
+            </form>
+            <p>Check out</p>
+            <form>
+                <input type="date" name="check_out_date">
+            </form>
+            <p>Guests</p>
+            <form>
+                <select name="guest_number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </form>
+        </div>
+        <div class="column2">
+            <div class="col2_1">
+            <img src="static/img/capturen.jpg" alt="gabs place">
+            </div>
+            <div class="col2_2">
+            <img id="gab" src="static/img/pic.jpg" alt="gab">
+            <div>
+                <p>"<a href="gabs.html">Gabs place</a>" - <b>Amsterdam, Netherlands</b></p>
+                <p>$85/night</p>
+                <p>1 Review</p>
+                <img src="static/img/stop.jpg" alt="pause">
+            </div>
+            </div>
+        </div>
+        <div class="column3">
+            <p class="regular_red">Frances & Greg, Los Angeles</p>
+            <p class="small_grey">Recently reviewed</p>
+            <img class="col3" src="static/img/1.jpg" alt="Frances and Greg">
+            <p class="regular_red">Washington DC</p>
+            <p class="small_grey">From $10/night</p>
+            <img class="col3" src="static/img/2.jpg" alt="Washington DC">
+            <p class="regular_red">Paris, France</p>
+            <p class="small_grey">Rooms from $20/night</p>
+            <img class="col3" src="static/img/3.jpg" alt="Paris, France">
+        </div>
+    </div>
+    <div id="seen">As seen on:
+    <img class="seen_logo" src="static/img/cnn2.jpg" alt="CNN logo">
+    <img class="seen_logo" src="static/img/the.png" alt="The New York Times logo">
+    <img class="seen_logo" src="static/img/tech.jpg" alt="Tech Crunch logo">
+    <img class="seen_logo" src="static/img/news.jpg" alt="Newsweek logo">
+    <img class="seen_logo" src="static/img/wall.jpg" alt="The Wall Street Journal logo">
+    <img class="seen_logo" src="static/img/nbc.jpg" alt="NBC logo">
+    </div>
+{% endblock %}
